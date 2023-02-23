@@ -20,9 +20,12 @@ more_movies = [
   {:title => 'Aristocats', :rating => 'G',
     :release_date => '24-Dec-1970'},
   {:title => 'White Snake', :rating => 'PG-13',
-    :release_date => '11-Jan-2019'}
+    :release_date => '11-Jan-2019'},
+  {:title => 'Crazy Rich Asians', :rating => 'PG-13',
+    :release_date => '07-Aug-2018'}
 ]
 
 more_movies.each do |movie|
-  Movie.create!(movie)
+  # Movie.create!(movie)
+  Movie.where(movie).first_or_create
 end
